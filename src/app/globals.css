@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050505;
+  --foreground: #f5f5f5;
+  --lime: #4d9a56;
+  --lime-muted: #6a9f72;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  border-left: 4px solid var(--lime);
+  /* Hotspot ~ top-center of the alien head */
+  cursor: url("/alien-cursor.svg") 16 6, auto;
+}
+
+/* Links/buttons often get `cursor: pointer` from Tailwind — match the alien + sensible fallback */
+a,
+button,
+[role="button"],
+summary,
+label[for] {
+  cursor: url("/alien-cursor.svg") 16 6, pointer;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]),
+textarea,
+select,
+[contenteditable="true"] {
+  cursor: text;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, Geneva, "Trebuchet MS", sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  position: relative;
+}
+
+/* Full-viewport art: dulled via filter + veil, pixelated via small raster + scale */
+.site-background {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.site-background-img {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  width: 25%;
+  height: 25%;
+  object-fit: cover;
+  transform: scale(4);
+  transform-origin: top left;
+  filter: brightness(0.35) saturate(0.4) contrast(1.05);
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.site-background-veil {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 0.55);
+}
+
+::selection {
+  background: var(--lime);
+  color: #000;
+}
+
+a {
+  color: inherit;
+}
+
+.retro-box {
+  border: 2px solid var(--lime);
+  background: #000;
+  box-shadow: 4px 4px 0 0 var(--lime);
+}
+
+.retro-heading {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--lime);
 }

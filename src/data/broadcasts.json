@@ -1,0 +1,24 @@
+[
+  {
+    "showname": "Holly's Super Good Show",
+    "host": {
+      "name": "Holly",
+      "tagline": "Loud / sincere / strictly good tunes"
+    },
+    "episodes": [
+      { "id": "holly-pilot", "title": "Pilot — the manifesto" },
+      { "id": "holly-ep2", "title": "Voicemails from the void" }
+    ]
+  },
+  {
+    "showname": "Nico's Great Show",
+    "host": {
+      "name": "Nico",
+      "tagline": "Late hours, stranger requests"
+    },
+    "episodes": [
+      { "id": "nico-001", "title": "Opening credits (extended)" },
+      { "id": "nico-002", "title": "Guest hour: basement legends" }
+    ]
+  }
+]
