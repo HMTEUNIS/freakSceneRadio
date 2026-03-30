@@ -55,14 +55,13 @@ body {
 
 .site-background-img {
   position: absolute;
-  top: 15%;
-  left: 0;
-  width: 25%;
-  height: 25%;
+  height:200%;
+  width:100%;
   object-fit: cover;
-  transform: scale(4);
+  transform: scale(1.5);
+  top: -25%;
   transform-origin: top left;
-  filter: brightness(0.35) saturate(0.4) contrast(1.05);
+  filter: brightness(0.3) saturate(0.9) contrast(.9);
   image-rendering: pixelated;
   image-rendering: crisp-edges;
 }
@@ -70,7 +69,7 @@ body {
 .site-background-veil {
   position: absolute;
   inset: 0;
-  background: rgb(0 0 0 / 0.55);
+  background: rgba(0, 0, 0, 0.45);
 }
 
 ::selection {
